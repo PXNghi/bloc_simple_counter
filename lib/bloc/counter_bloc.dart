@@ -9,11 +9,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
     });
 
     on<Decrement>((event, emit) {
-      emit(CounterState(counter: state.counter - 1));
-    });
-
-    on<CheckNegativeNumb>((event, emit) {
-      emit(CounterState(counter: state.counter <= 0 ? 0 : state.counter));
+      emit(CounterState(counter: state.counter > 0 ? state.counter - 1 : 0));
     });
   }
 }

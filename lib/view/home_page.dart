@@ -41,11 +41,8 @@ class _HomePageState extends State<HomePage> {
                     width: 30.0,
                   ),
                   ElevatedButton(
-                    onPressed: () {
-                      BlocProvider.of<CounterBloc>(context).add(Decrement());
-                      BlocProvider.of<CounterBloc>(context)
-                          .add(CheckNegativeNumb());
-                    },
+                    onPressed: () =>
+                        BlocProvider.of<CounterBloc>(context).add(Decrement()),
                     child: const Icon(Icons.remove),
                   ),
                 ],
